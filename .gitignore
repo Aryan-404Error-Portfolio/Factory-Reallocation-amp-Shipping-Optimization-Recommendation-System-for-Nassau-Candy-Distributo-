@@ -1,0 +1,13 @@
+.venv/
+venv/
+__pycache__/
+**/__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.pyc
+.streamlit/secrets.toml
+data/uploads/
+.DS_Store
+*.egg-info/
+.ipynb_checkpoints/

@@ -1,0 +1,31 @@
+[theme]
+base = "light"
+primaryColor = "#9a3412"
+backgroundColor = "#f4f0e8"
+secondaryBackgroundColor = "#fffdf9"
+textColor = "#1c1917"
+font = "sans serif"
+borderColor = "#e6dfd4"
+dataframeBorderColor = "#e6dfd4"
+showWidgetBorder = true
+
+[theme.sidebar]
+backgroundColor = "#f3eee6"
+secondaryBackgroundColor = "#fffdf9"
+borderColor = "#e6dfd4"
+
+[server]
+headless = true
+address = "0.0.0.0"
+port = 8501
+enableCORS = false
+enableXsrfProtection = false
+enableWebsocketCompression = false
+fileWatcherType = "none"
+
+[browser]
+gatherUsageStats = false
+
+[client]
+toolbarMode = "viewer"
+showErrorLinks = false

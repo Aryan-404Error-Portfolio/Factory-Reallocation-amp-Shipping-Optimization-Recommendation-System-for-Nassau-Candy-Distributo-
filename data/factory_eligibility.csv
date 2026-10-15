@@ -1,0 +1,76 @@
+product_name,factory,status,source,notes
+Wonka Bar - Nutty Crunch Surprise,Lot's O' Nuts,confirmed_current,supplied_mapping,Supplied current assignment. Confirm with the business owner before production use.
+Wonka Bar - Nutty Crunch Surprise,Wicked Choccy's,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Wonka Bar - Nutty Crunch Surprise,Sugar Shack,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Wonka Bar - Nutty Crunch Surprise,Secret Factory,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Wonka Bar - Nutty Crunch Surprise,The Other Factory,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Wonka Bar - Fudge Mallows,Lot's O' Nuts,confirmed_current,supplied_mapping,Supplied current assignment. Confirm with the business owner before production use.
+Wonka Bar - Fudge Mallows,Wicked Choccy's,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Wonka Bar - Fudge Mallows,Sugar Shack,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Wonka Bar - Fudge Mallows,Secret Factory,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Wonka Bar - Fudge Mallows,The Other Factory,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Wonka Bar - Scrumdiddlyumptious,Lot's O' Nuts,confirmed_current,supplied_mapping,Supplied current assignment. Confirm with the business owner before production use.
+Wonka Bar - Scrumdiddlyumptious,Wicked Choccy's,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Wonka Bar - Scrumdiddlyumptious,Sugar Shack,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Wonka Bar - Scrumdiddlyumptious,Secret Factory,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Wonka Bar - Scrumdiddlyumptious,The Other Factory,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Wonka Bar - Milk Chocolate,Lot's O' Nuts,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Wonka Bar - Milk Chocolate,Wicked Choccy's,confirmed_current,supplied_mapping,Supplied current assignment. Confirm with the business owner before production use.
+Wonka Bar - Milk Chocolate,Sugar Shack,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Wonka Bar - Milk Chocolate,Secret Factory,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Wonka Bar - Milk Chocolate,The Other Factory,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Wonka Bar - Triple Dazzle Caramel,Lot's O' Nuts,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Wonka Bar - Triple Dazzle Caramel,Wicked Choccy's,confirmed_current,supplied_mapping,Supplied current assignment. Confirm with the business owner before production use.
+Wonka Bar - Triple Dazzle Caramel,Sugar Shack,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Wonka Bar - Triple Dazzle Caramel,Secret Factory,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Wonka Bar - Triple Dazzle Caramel,The Other Factory,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Laffy Taffy,Lot's O' Nuts,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Laffy Taffy,Wicked Choccy's,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Laffy Taffy,Sugar Shack,confirmed_current,supplied_mapping,Supplied current assignment. Confirm with the business owner before production use.
+Laffy Taffy,Secret Factory,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Laffy Taffy,The Other Factory,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+SweeTARTS,Lot's O' Nuts,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+SweeTARTS,Wicked Choccy's,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+SweeTARTS,Sugar Shack,confirmed_current,supplied_mapping,Supplied current assignment. Confirm with the business owner before production use.
+SweeTARTS,Secret Factory,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+SweeTARTS,The Other Factory,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Nerds,Lot's O' Nuts,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Nerds,Wicked Choccy's,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Nerds,Sugar Shack,confirmed_current,supplied_mapping,Supplied current assignment. Confirm with the business owner before production use.
+Nerds,Secret Factory,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Nerds,The Other Factory,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Fun Dip,Lot's O' Nuts,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Fun Dip,Wicked Choccy's,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Fun Dip,Sugar Shack,confirmed_current,supplied_mapping,Supplied current assignment. Confirm with the business owner before production use.
+Fun Dip,Secret Factory,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Fun Dip,The Other Factory,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Fizzy Lifting Drinks,Lot's O' Nuts,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Fizzy Lifting Drinks,Wicked Choccy's,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Fizzy Lifting Drinks,Sugar Shack,confirmed_current,supplied_mapping,Supplied current assignment. Confirm with the business owner before production use.
+Fizzy Lifting Drinks,Secret Factory,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Fizzy Lifting Drinks,The Other Factory,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Everlasting Gobstopper,Lot's O' Nuts,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Everlasting Gobstopper,Wicked Choccy's,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Everlasting Gobstopper,Sugar Shack,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Everlasting Gobstopper,Secret Factory,confirmed_current,supplied_mapping,Supplied current assignment. Confirm with the business owner before production use.
+Everlasting Gobstopper,The Other Factory,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Hair Toffee,Lot's O' Nuts,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Hair Toffee,Wicked Choccy's,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Hair Toffee,Sugar Shack,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Hair Toffee,Secret Factory,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Hair Toffee,The Other Factory,confirmed_current,supplied_mapping,Supplied current assignment. Confirm with the business owner before production use.
+Lickable Wallpaper,Lot's O' Nuts,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Lickable Wallpaper,Wicked Choccy's,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Lickable Wallpaper,Sugar Shack,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Lickable Wallpaper,Secret Factory,confirmed_current,supplied_mapping,Supplied current assignment. Confirm with the business owner before production use.
+Lickable Wallpaper,The Other Factory,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Wonka Gum,Lot's O' Nuts,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Wonka Gum,Wicked Choccy's,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Wonka Gum,Sugar Shack,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Wonka Gum,Secret Factory,confirmed_current,supplied_mapping,Supplied current assignment. Confirm with the business owner before production use.
+Wonka Gum,The Other Factory,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Kazookles,Lot's O' Nuts,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Kazookles,Wicked Choccy's,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Kazookles,Sugar Shack,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Kazookles,Secret Factory,requires_validation,default_unverified,Alternative is not confirmed as operationally or legally eligible.
+Kazookles,The Other Factory,confirmed_current,supplied_mapping,Supplied current assignment. Confirm with the business owner before production use.

@@ -1,0 +1,566 @@
+{
+  "model_version": "1.0.0",
+  "trained_at": "2026-10-15T12:23:52+00:00",
+  "dataset_sha256": "6ae9208e77ce410e90073b19813d29f89853ce9f3cce43d41f9643781696e94f",
+  "seed": 42,
+  "tiny": false,
+  "factory_effect_learned": false,
+  "origin_column": null,
+  "feature_columns": [
+    "ship_mode",
+    "region",
+    "division",
+    "product_name",
+    "state",
+    "country",
+    "units",
+    "order_month",
+    "order_dow",
+    "order_quarter"
+  ],
+  "leakage_audit": {
+    "passed": true,
+    "forbidden_found": [],
+    "feature_columns": [
+      "ship_mode",
+      "region",
+      "division",
+      "product_name",
+      "state",
+      "country",
+      "units",
+      "order_month",
+      "order_dow",
+      "order_quarter"
+    ],
+    "rule": "Ship date, lead time, order identifiers, customer id, postal code, cohort year, and financial outcome fields are not model inputs."
+  },
+  "split": {
+    "strategy": "chronological holdout by order date",
+    "date_column": "order_date",
+    "test_fraction_requested": 0.2,
+    "cutoff": "2025-10-09",
+    "train_rows": 8149,
+    "test_rows": 2045,
+    "train_start": "2024-01-02",
+    "train_end": "2025-10-08",
+    "test_start": "2025-10-09",
+    "test_end": "2025-12-31",
+    "train_target_median": 1273.0,
+    "test_target_median": 1637.0,
+    "grouping_note": "Rows that share an order date stay in the same partition because the cutoff is a date boundary. Order lines in this extract share one order date."
+  },
+  "cohort_medians_train": {
+    "2021": 908.0,
+    "2022": 1273.0,
+    "2023": 1273.0,
+    "2024": 1639.0
+  },
+  "global_median_train": 1273.0,
+  "outlier_treatment": {
+    "rule": "Lead time greater than 60 calendar days is unusually long for a ship-date target.",
+    "rows_flagged": 10194,
+    "rows_retained_if_excluded": 0,
+    "rows_deleted": 0,
+    "model_trained_on_retained_rows": false,
+    "reason": "No rows were deleted. Excluding unusually long lead times does not leave enough rows to train when the date anomaly affects the whole extract. A parallel within-cohort residual target is reported as a documented sensitivity analysis, not as a replacement for the raw target.",
+    "retained_test_mae": null,
+    "retained_selected_model": null
+  },
+  "target_credibility": "low",
+  "target_quality_penalty": 0.85,
+  "targets": {
+    "lead_time_days": {
+      "selected_model": "group_median_baseline",
+      "alternate_model": "linear_regression",
+      "selection_reason": "Selected group_median_baseline by mean chronological cross-validation MAE on the training period. Models within 1 day of the best CV MAE are treated as tied, and the simpler model is kept. The test set was not used for selection.",
+      "candidates": {
+        "group_median_baseline": {
+          "cv": {
+            "mae": 205.5948166845494,
+            "rmse": 274.34134939667484,
+            "r2": -1.2814851430262388,
+            "n_folds": 3
+          },
+          "train": {
+            "mae": 192.18934838630506,
+            "rmse": 264.7633666577877,
+            "r2": -0.0013262096237762755,
+            "n": 8149
+          },
+          "test": {
+            "mae": 206.7520782396088,
+            "rmse": 274.90303424954914,
+            "r2": -1.2956255371002103,
+            "n": 2045
+          }
+        },
+        "linear_regression": {
+          "cv": {
+            "mae": 311.9315530451101,
+            "rmse": 365.9055733920256,
+            "r2": -3.066932617562746,
+            "n_folds": 3
+          },
+          "train": {
+            "mae": 203.76838446143358,
+            "rmse": 252.1967024519714,
+            "r2": 0.09147140301441425,
+            "n": 8149
+          },
+          "test": {
+            "mae": 273.35651737241034,
+            "rmse": 332.4248128599682,
+            "r2": -2.3568261240563797,
+            "n": 2045
+          }
+        },
+        "random_forest": {
+          "cv": {
+            "mae": 368.62428835237347,
+            "rmse": 424.6002623328266,
+            "r2": -4.464512967684208,
+            "n_folds": 3
+          },
+          "train": {
+            "mae": 184.81692067956422,
+            "rmse": 225.34339106368148,
+            "r2": 0.27464694378578314,
+            "n": 8149
+          },
+          "test": {
+            "mae": 364.4626428396489,
+            "rmse": 420.9567689871038,
+            "r2": -4.38290822224228,
+            "n": 2045
+          }
+        },
+        "gradient_boosting": {
+          "cv": {
+            "mae": 367.5933396248535,
+            "rmse": 419.87406718127824,
+            "r2": -4.3439106704871575,
+            "n_folds": 3
+          },
+          "train": {
+            "mae": 196.05020451288968,
+            "rmse": 236.75736548282035,
+            "r2": 0.19930559883508814,
+            "n": 8149
+          },
+          "test": {
+            "mae": 357.3367488095493,
+            "rmse": 409.52394672713285,
+            "r2": -4.0944884798610435,
+            "n": 2045
+          }
+        },
+        "global_median": {
+          "cv": {
+            "mae": null,
+            "rmse": null,
+            "r2": null,
+            "n_folds": 0
+          },
+          "train": {
+            "mae": 192.40176708798626,
+            "rmse": 264.7109686429096,
+            "r2": -0.0009299137577805094,
+            "n": 8149
+          },
+          "test": {
+            "mae": 206.90953545232273,
+            "rmse": 274.7598426792828,
+            "r2": -1.293234667782099,
+            "n": 2045
+          },
+          "note": "Reference only. Not eligible for selection; the grouped ship-mode median is the baseline."
+        }
+      },
+      "test_residual_p10": -1.0,
+      "test_residual_p90": 367.0,
+      "subgroup_mae": {
+        "region": [
+          {
+            "region": "Gulf",
+            "mae": 221.66237942122186,
+            "n": 311
+          },
+          {
+            "region": "Interior",
+            "mae": 210.93899782135077,
+            "n": 459
+          },
+          {
+            "region": "Atlantic",
+            "mae": 209.42384105960264,
+            "n": 604
+          },
+          {
+            "region": "Pacific",
+            "mae": 194.57228017883756,
+            "n": 671
+          }
+        ],
+        "ship_mode": [
+          {
+            "ship_mode": "Second Class",
+            "mae": 219.088161209068,
+            "n": 397
+          },
+          {
+            "ship_mode": "Same Day",
+            "mae": 217.260162601626,
+            "n": 123
+          },
+          {
+            "ship_mode": "First Class",
+            "mae": 206.21875,
+            "n": 320
+          },
+          {
+            "ship_mode": "Standard Class",
+            "mae": 201.75684647302904,
+            "n": 1205
+          }
+        ],
+        "division": [
+          {
+            "division": "Sugar",
+            "mae": 220.2,
+            "n": 10
+          },
+          {
+            "division": "Other",
+            "mae": 214.2923076923077,
+            "n": 65
+          },
+          {
+            "division": "Chocolate",
+            "mae": 206.43502538071067,
+            "n": 1970
+          }
+        ],
+        "product_name": [
+          {
+            "product_name": "Hair Toffee",
+            "mae": 366.0,
+            "n": 1
+          },
+          {
+            "product_name": "Nerds",
+            "mae": 365.0,
+            "n": 1
+          },
+          {
+            "product_name": "SweeTARTS",
+            "mae": 245.0,
+            "n": 3
+          },
+          {
+            "product_name": "Laffy Taffy",
+            "mae": 245.0,
+            "n": 3
+          },
+          {
+            "product_name": "Wonka Gum",
+            "mae": 239.04347826086956,
+            "n": 23
+          },
+          {
+            "product_name": "Lickable Wallpaper",
+            "mae": 230.59259259259258,
+            "n": 27
+          },
+          {
+            "product_name": "Wonka Bar - Scrumdiddlyumptious",
+            "mae": 216.15479115479116,
+            "n": 407
+          },
+          {
+            "product_name": "Wonka Bar - Triple Dazzle Caramel",
+            "mae": 212.45843828715365,
+            "n": 397
+          },
+          {
+            "product_name": "Wonka Bar - Milk Chocolate",
+            "mae": 206.88111888111888,
+            "n": 429
+          },
+          {
+            "product_name": "Wonka Bar - Nutty Crunch Surprise",
+            "mae": 204.8876712328767,
+            "n": 365
+          },
+          {
+            "product_name": "Wonka Bar - Fudge Mallows",
+            "mae": 190.3763440860215,
+            "n": 372
+          },
+          {
+            "product_name": "Kazookles",
+            "mae": 147.0,
+            "n": 15
+          },
+          {
+            "product_name": "Fun Dip",
+            "mae": 1.0,
+            "n": 1
+          },
+          {
+            "product_name": "Fizzy Lifting Drinks",
+            "mae": 0.0,
+            "n": 1
+          }
+        ]
+      },
+      "feature_importance": []
+    },
+    "operational_residual_days": {
+      "selected_model": "group_median_baseline",
+      "alternate_model": "linear_regression",
+      "selection_reason": "Selected group_median_baseline by mean chronological cross-validation MAE on the training period. Models within 1 day of the best CV MAE are treated as tied, and the simpler model is kept. The test set was not used for selection.",
+      "candidates": {
+        "group_median_baseline": {
+          "cv": {
+            "mae": 0.8105715883929067,
+            "rmse": 1.017246884753864,
+            "r2": 0.6827885835419893,
+            "n_folds": 3
+          },
+          "train": {
+            "mae": 0.803043318198552,
+            "rmse": 1.032066552841041,
+            "r2": 0.6528538973185805,
+            "n": 8149
+          },
+          "test": {
+            "mae": 0.7853300733496332,
+            "rmse": 1.0002444688949859,
+            "r2": 0.6862383471816591,
+            "n": 2045
+          }
+        },
+        "linear_regression": {
+          "cv": {
+            "mae": 0.8589042097126276,
+            "rmse": 1.029979999349179,
+            "r2": 0.6748131741480118,
+            "n_folds": 3
+          },
+          "train": {
+            "mae": 0.8152579320453194,
+            "rmse": 1.0030436130981413,
+            "r2": 0.6721036968194647,
+            "n": 8149
+          },
+          "test": {
+            "mae": 0.8217040073609274,
+            "rmse": 1.0070105392324422,
+            "r2": 0.6819791611897054,
+            "n": 2045
+          }
+        },
+        "random_forest": {
+          "cv": {
+            "mae": 0.8409158581129658,
+            "rmse": 1.0256691181769932,
+            "r2": 0.6775302784001523,
+            "n_folds": 3
+          },
+          "train": {
+            "mae": 0.7752893463841367,
+            "rmse": 0.9741753825119951,
+            "r2": 0.6907062187970863,
+            "n": 8149
+          },
+          "test": {
+            "mae": 0.8054436433258918,
+            "rmse": 0.9984884491711568,
+            "r2": 0.6873390541142956,
+            "n": 2045
+          }
+        },
+        "gradient_boosting": {
+          "cv": {
+            "mae": 0.8462439054374897,
+            "rmse": 1.0192328257557703,
+            "r2": 0.6815614182587267,
+            "n_folds": 3
+          },
+          "train": {
+            "mae": 0.8036154351916482,
+            "rmse": 0.9921199050484806,
+            "r2": 0.6792067565404805,
+            "n": 8149
+          },
+          "test": {
+            "mae": 0.8086521326304567,
+            "rmse": 0.9940253366161635,
+            "r2": 0.690127914165674,
+            "n": 2045
+          }
+        },
+        "global_median": {
+          "cv": {
+            "mae": null,
+            "rmse": null,
+            "r2": null,
+            "n_folds": 0
+          },
+          "train": {
+            "mae": 1.3286292796662167,
+            "rmse": 1.7521965248442537,
+            "r2": -0.0006046478094969832,
+            "n": 8149
+          },
+          "test": {
+            "mae": 1.372127139364303,
+            "rmse": 1.7858449131404808,
+            "r2": -0.0001727759927758754,
+            "n": 2045
+          },
+          "note": "Reference only. Not eligible for selection; the grouped ship-mode median is the baseline."
+        }
+      },
+      "test_residual_p10": -1.0,
+      "test_residual_p90": 2.0,
+      "subgroup_mae": {
+        "region": [
+          {
+            "region": "Pacific",
+            "mae": 0.8375558867362146,
+            "n": 671
+          },
+          {
+            "region": "Atlantic",
+            "mae": 0.7814569536423841,
+            "n": 604
+          },
+          {
+            "region": "Gulf",
+            "mae": 0.77491961414791,
+            "n": 311
+          },
+          {
+            "region": "Interior",
+            "mae": 0.7211328976034859,
+            "n": 459
+          }
+        ],
+        "ship_mode": [
+          {
+            "ship_mode": "Second Class",
+            "mae": 0.9672544080604534,
+            "n": 397
+          },
+          {
+            "ship_mode": "Standard Class",
+            "mae": 0.845643153526971,
+            "n": 1205
+          },
+          {
+            "ship_mode": "First Class",
+            "mae": 0.61875,
+            "n": 320
+          },
+          {
+            "ship_mode": "Same Day",
+            "mae": 0.04065040650406504,
+            "n": 123
+          }
+        ],
+        "division": [
+          {
+            "division": "Other",
+            "mae": 0.8153846153846154,
+            "n": 65
+          },
+          {
+            "division": "Sugar",
+            "mae": 0.8,
+            "n": 10
+          },
+          {
+            "division": "Chocolate",
+            "mae": 0.7842639593908629,
+            "n": 1970
+          }
+        ],
+        "product_name": [
+          {
+            "product_name": "Fun Dip",
+            "mae": 1.0,
+            "n": 1
+          },
+          {
+            "product_name": "Laffy Taffy",
+            "mae": 1.0,
+            "n": 3
+          },
+          {
+            "product_name": "SweeTARTS",
+            "mae": 1.0,
+            "n": 3
+          },
+          {
+            "product_name": "Nerds",
+            "mae": 1.0,
+            "n": 1
+          },
+          {
+            "product_name": "Kazookles",
+            "mae": 0.8666666666666667,
+            "n": 15
+          },
+          {
+            "product_name": "Wonka Bar - Milk Chocolate",
+            "mae": 0.8624708624708625,
+            "n": 429
+          },
+          {
+            "product_name": "Lickable Wallpaper",
+            "mae": 0.8148148148148148,
+            "n": 27
+          },
+          {
+            "product_name": "Wonka Bar - Triple Dazzle Caramel",
+            "mae": 0.8060453400503779,
+            "n": 397
+          },
+          {
+            "product_name": "Wonka Gum",
+            "mae": 0.782608695652174,
+            "n": 23
+          },
+          {
+            "product_name": "Wonka Bar - Fudge Mallows",
+            "mae": 0.7634408602150538,
+            "n": 372
+          },
+          {
+            "product_name": "Wonka Bar - Scrumdiddlyumptious",
+            "mae": 0.7542997542997543,
+            "n": 407
+          },
+          {
+            "product_name": "Wonka Bar - Nutty Crunch Surprise",
+            "mae": 0.7232876712328767,
+            "n": 365
+          },
+          {
+            "product_name": "Hair Toffee",
+            "mae": 0.0,
+            "n": 1
+          },
+          {
+            "product_name": "Fizzy Lifting Drinks",
+            "mae": 0.0,
+            "n": 1
+          }
+        ]
+      },
+      "feature_importance": []
+    }
+  }
+}

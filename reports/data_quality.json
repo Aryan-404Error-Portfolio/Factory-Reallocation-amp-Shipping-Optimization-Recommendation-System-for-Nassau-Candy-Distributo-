@@ -1,0 +1,199 @@
+{
+  "n_rows": 10194,
+  "n_columns_source": 18,
+  "source_columns": [
+    "Row ID",
+    "Order ID",
+    "Order Date",
+    "Ship Date",
+    "Ship Mode",
+    "Customer ID",
+    "Country/Region",
+    "City",
+    "State/Province",
+    "Postal Code",
+    "Division",
+    "Region",
+    "Product ID",
+    "Product Name",
+    "Sales",
+    "Units",
+    "Gross Profit",
+    "Cost"
+  ],
+  "date_format": "day-month-year (%d-%m-%Y)",
+  "date_profile": {
+    "order_invalid": 0,
+    "ship_invalid": 0,
+    "order_min": "2024-01-02",
+    "order_max": "2025-12-31",
+    "ship_min": "2026-06-30",
+    "ship_max": "2030-06-28",
+    "mdy_order_invalid": 6064,
+    "mdy_ship_invalid": 6173,
+    "format_decision": "Day-month-year is used because it parses every supplied date, including day values above 12. Month-first parsing leaves those dates invalid."
+  },
+  "lead_time_profile": {
+    "n_valid": 10194,
+    "min": 904.0,
+    "p25": 1271.0,
+    "median": 1274.0,
+    "p75": 1638.0,
+    "max": 1642.0,
+    "negative": 0,
+    "zero": 0,
+    "long": 10194,
+    "multi_year": 10194,
+    "iqr_outliers": 0,
+    "peaks": [
+      {
+        "label": "about 908 days",
+        "rows": 2051
+      },
+      {
+        "label": "about 1273 days",
+        "rows": 4764
+      },
+      {
+        "label": "about 1639 days",
+        "rows": 3379
+      }
+    ],
+    "unique_values": 28
+  },
+  "financial_profile": {
+    "gp_discrepancy_count": 0,
+    "negative_sales": 0,
+    "negative_cost": 0,
+    "nonpositive_units": 0,
+    "sales_sum": 141783.63,
+    "gross_profit_sum": 93442.79999999999,
+    "units_sum": 38654.0,
+    "margin_median": 0.6666666666666666
+  },
+  "duplicate_profile": {
+    "duplicate_row_id": 0,
+    "duplicate_business_rows": 313,
+    "unique_order_id": 8549,
+    "unique_customer_id": 5044
+  },
+  "product_profile": {
+    "products": 15,
+    "unmapped_products": [],
+    "name_spacing_rows": 2064,
+    "division_mismatches": [
+      {
+        "product_name": "Fizzy Lifting Drinks",
+        "division": "Sugar",
+        "mapping_division": "Other"
+      }
+    ]
+  },
+  "postal_profile": {
+    "us_four_character": 449,
+    "canada_three_character_or_shorter": 200
+  },
+  "origin_profile": {
+    "source_column": null,
+    "present": false,
+    "usable_for_training": false
+  },
+  "variance_decomposition": {
+    "order_id_year_r2": 0.9999552477212812,
+    "ship_mode_r2_raw": 0.0011884224005964672,
+    "region_r2_raw": 0.00024752991334320296,
+    "product_r2_raw": 0.0010701035773894585,
+    "ship_mode_r2_residual": 0.6647923377166249,
+    "region_r2_residual": 0.000836913868727196,
+    "product_r2_residual": 0.0016927752503127502,
+    "note": "Order ID year R\u00b2 is a diagnostic of the date artifact. That identifier is not used as a model feature."
+  },
+  "order_id_year_mismatch_rows": 10194,
+  "warnings": [
+    {
+      "code": "DATE_RANGE_ANOMALY",
+      "severity": "critical",
+      "message": "Ship dates parse as day-month-year (%d-%m-%Y), and 10,194 of 10,194 lead times exceed 365 days (range 904\u20131642). This may be a source-system offset, synthetic data, or a real delay. It is flagged, not deleted, and it is not treated as a credible delivery ETA.",
+      "count": 10194
+    },
+    {
+      "code": "ORDER_ID_YEAR_MISMATCH",
+      "severity": "critical",
+      "message": "10,194 rows have an Order ID year that does not match the order-date year. The Order ID year lines up with the multi-year lead-time bands. It is an identifier, not a model feature.",
+      "count": 10194
+    },
+    {
+      "code": "FACTORY_ORIGIN_ABSENT",
+      "severity": "critical",
+      "message": "The order extract has no usable origin-factory field. Current factory is joined from the supplied product mapping and is an assumption, not an observed shipment fact. The model must not invent a factory effect by swapping labels.",
+      "count": 10194
+    },
+    {
+      "code": "CUSTOMER_COORDINATES_ABSENT",
+      "severity": "warning",
+      "message": "Customer latitude and longitude are not in the extract. Great-circle distance runs only when the user supplies coordinates or explicitly accepts approximate state centroids. Straight-line distance is not road distance.",
+      "count": null
+    },
+    {
+      "code": "FREIGHT_COST_ABSENT",
+      "severity": "warning",
+      "message": "Freight charges, carrier rates, and factory-specific operating costs are not in the extract. Profit impact of a reassignment is not quantified unless the user enters a labeled sensitivity assumption.",
+      "count": null
+    },
+    {
+      "code": "LONG_LEAD_TIME",
+      "severity": "warning",
+      "message": "10,194 lead times exceed 60 days, the business review threshold for a ship-date target. Rows are retained.",
+      "count": 10194
+    },
+    {
+      "code": "PRODUCT_NAME_SPACING",
+      "severity": "warning",
+      "message": "2,064 rows use a product name whose spacing differs from the supplied mapping (Wonka Bar -Scrumdiddlyumptious). Names are joined on a normalized key and the source spelling is preserved.",
+      "count": 2064
+    },
+    {
+      "code": "DIVISION_MAPPING_MISMATCH",
+      "severity": "warning",
+      "message": "Division does not match the supplied mapping for: Fizzy Lifting Drinks: extract Sugar, mapping Other. Observed division is kept.",
+      "count": 1
+    },
+    {
+      "code": "US_POSTAL_POSSIBLE_MISSING_ZERO",
+      "severity": "warning",
+      "message": "449 United States postal codes have 4 characters. Northeast codes may have lost a leading zero in the source extract. Postal code is stored as text and is not a model feature.",
+      "count": 449
+    },
+    {
+      "code": "CANADA_POSTAL_TRUNCATED",
+      "severity": "warning",
+      "message": "200 Canadian postal values are 3 characters or shorter and look truncated.",
+      "count": 200
+    },
+    {
+      "code": "DUPLICATE_BUSINESS_ROWS",
+      "severity": "warning",
+      "message": "313 rows repeat the same order, dates, ship mode, city, product, sales, and units. They are retained so sample sizes are not silently reduced. Row ID itself is unique.",
+      "count": 313
+    },
+    {
+      "code": "FINANCIAL_IDENTITY_HOLDS",
+      "severity": "info",
+      "message": "Gross Profit matches Sales minus Cost within one cent on every row. Source values were not rewritten.",
+      "count": 0
+    },
+    {
+      "code": "IQR_OUTLIERS",
+      "severity": "info",
+      "message": "0 lead times fall outside the 1.5 IQR fence. A multi-year shift that affects most rows is not an IQR outlier, so the business rule is reported separately.",
+      "count": 0
+    }
+  ],
+  "warning_count": 11,
+  "critical_count": 3,
+  "training_allowed": true,
+  "training_blockers": [],
+  "target_credibility": "low",
+  "target_quality_penalty": 0.85,
+  "rows_deleted": 0
+}
